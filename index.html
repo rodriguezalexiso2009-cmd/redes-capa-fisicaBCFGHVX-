@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capa física: resumen y test</title>
+<style>
+:root{--bg:#f7f6fb;--card:#fff;--tx:#1f1b2e;--mu:#6b6780;--ac:#6d3fc0;--acs:#efe7fb;--ok:#1b7f4b;--oks:#e2f5ea;--ko:#b42335;--kos:#fde8eb;--bd:#e3dff0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15131d;--card:#1f1c2b;--tx:#ece9f6;--mu:#a29db8;--ac:#b794f4;--acs:#2d2542;--ok:#5fd397;--oks:#173226;--ko:#ff8a98;--kos:#3a1b21;--bd:#322e45}}
+:root[data-theme="dark"]{--bg:#15131d;--card:#1f1c2b;--tx:#ece9f6;--mu:#a29db8;--ac:#b794f4;--acs:#2d2542;--ok:#5fd397;--oks:#173226;--ko:#ff8a98;--kos:#3a1b21;--bd:#322e45}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:680px;margin:0 auto;padding:14px 14px 60px}
+h1{font-size:1.35rem;margin:6px 0 2px}h2{font-size:1.1rem;margin:0 0 8px}
+.sub{color:var(--mu);margin:0 0 12px;font-size:.9rem}
+nav{display:flex;gap:6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;z-index:5}
+nav button{flex:1;padding:10px 4px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font:inherit;font-size:.9rem}
+nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:10px 0}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:8px 0}
+summary{font-weight:600;cursor:pointer}
+details ul{margin:8px 0 2px;padding-left:20px}li{margin:3px 0}
+.btn{display:block;width:100%;padding:13px;border:0;border-radius:12px;background:var(--ac);color:#fff;font:inherit;font-weight:600;margin-top:10px}
+.btn.alt{background:var(--acs);color:var(--ac)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.85rem}
+th,td{border:1px solid var(--bd);padding:6px 8px;text-align:left}th{background:var(--acs)}
+.opt{display:block;width:100%;text-align:left;padding:12px;margin:8px 0;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font:inherit}
+.opt.ok{background:var(--oks);border-color:var(--ok)}.opt.ko{background:var(--kos);border-color:var(--ko)}
+.fb{margin-top:10px;padding:10px 12px;border-radius:10px;font-size:.92rem}
+.fb.ok{background:var(--oks)}.fb.ko{background:var(--kos)}
+.bar{height:8px;background:var(--acs);border-radius:8px;overflow:hidden;margin:6px 0 12px}.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.big{font-size:2.4rem;font-weight:700;text-align:center;color:var(--ac)}
+.fl{cursor:pointer;min-height:84px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;border:1px dashed var(--ac);border-radius:12px;background:var(--acs);margin:8px 0}
+.mn{background:var(--acs);border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.92rem}
+.hide{display:none}
+#p0 b{text-decoration:underline;text-decoration-color:var(--ac);text-decoration-thickness:2px;text-underline-offset:3px}
+.note{font-size:.88rem;color:var(--mu);margin:0 0 4px}
+</style>
+</head>
+<body>
+<main>
+<h1>La capa física</h1>
+<p class="sub">Resumen, test de 15 preguntas y trucos para repasar</p>
+<nav>
+<button id="t0" class="on" onclick="tab(0)">Resumen</button>
+<button id="t1" onclick="tab(1)">Test</button>
+<button id="t2" onclick="tab(2)">Repaso</button>
+</nav>
+
+<section id="p0">
+<p class="note">Lo subrayado es lo más importante de cada apartado.</p>
+<details open><summary>1. Concepto de capa física</summary><ul>
+<li>Es la <b>capa 1 del modelo OSI</b>. Su función: <b>transmitir bits</b> por un canal y que lleguen bien al destino.</li>
+<li>Medios: cable o aire (inalámbrico). Datos como señales eléctricas (cobre) o luz (fibra).</li>
+<li>Define voltios de 1 y 0, duración del bit (sincronización), sentido de la transmisión, inicio y fin de la conexión.</li>
+<li>Canal: dos parámetros, <b>velocidad</b> (ancho de banda) y <b>distancia máxima</b>. Más rápido = más caro.</li></ul></details>
+
+<details><summary>2. Señales</summary><ul>
+<li><b>Analógica</b>: continua en el tiempo. <b>Digital</b>: valores discretos, solo 0 y 1 (alto/bajo).</li>
+<li><b>Amplitud</b>: distancia entre punto más alto y más bajo (voltios).</li>
+<li><b>Frecuencia</b>: repeticiones por segundo (<b>Hz</b>).</li>
+<li><b>Fase</b>: punto donde empieza respecto al origen; si no empieza ahí, está desfasada.</li>
+<li>Canal y señal: coaxial/par trenzado = <b>eléctricas</b>; fibra = <b>pulsos de luz</b>; aire = <b>ondas electromagnéticas</b>.</li></ul></details>
+
+<details><summary>3. Codificación y modulación</summary><ul>
+<li><b>Manchester</b>: más complejo pero el más inmune al ruido; sincronización automática por transiciones (“cambio de estado garantizado”). <b>Lo usa Ethernet</b>.</li>
+<li><b>Modulación</b>: señal moduladora (info) + portadora. Tipos: <b>AM</b> (amplitud), <b>FM</b> (frecuencia), <b>PM</b> (fase). Permite varias señales por un mismo canal.</li></ul></details>
+
+<details><summary>4. Tipos de transmisión</summary><ul>
+<li><b>Serie</b>: bit tras bit (la más usada hoy). <b>Paralelo</b>: grupos de bits (circuitería cara).</li>
+<li><b>Síncrona</b>: reloj común. <b>Asíncrona</b>: bit de arranque + carácter de 8 bits + bit de parada.</li>
+<li><b>Simplex</b>: un solo sentido (radio, TV). <b>Half-duplex</b>: ambos sentidos pero no a la vez (walkie-talkie). <b>Full-duplex</b>: ambos a la vez (teléfono).</li>
+<li>Ethernet clásico es en realidad half-duplex: si dos transmiten a la vez hay <b>colisión</b>.</li></ul></details>
+
+<details><summary>5. Propiedades y perturbaciones</summary><ul>
+<li><b>Voltaje</b> (V), <b>resistencia</b> (ohmios, más resistencia = menos potencia), <b>potencia</b> (W, más potencia = más distancia).</li>
+<li><b>Ancho de banda</b> de red = velocidad de transmisión (bps, Kbps, Mbps).</li>
+<li><b>Atenuación</b>: pérdida de potencia con la distancia y se arregla con repetidores y concentradores.</li>
+<li><b>Reflexión</b>: rebote de energía por desajuste de impedancias (efecto eco).</li>
+<li><b>Ruido</b>: EMI/RFI (externo), <b>diafonía</b> o crosstalk (un cable influye en el vecino, típico en no trenzados), térmico (inevitable), de tierra (el más difícil de detectar). Importa la relación señal/ruido (S/N).</li></ul></details>
+
+<details><summary>6. Medios guiados y no guiados</summary><ul>
+<li><b>Guiados</b>: par trenzado (preferido en LAN), coaxial (antes en LAN), fibra óptica (WAN/MAN, caro).</li>
+<li><b>Infrarrojos</b>: 9 600 bps a 4 Mbps, deben estar <b>alineados</b>, hasta 70 m, estándar IrDA.</li>
+<li><b>Radiofrecuencia</b>: 900 MHz a 2,4 GHz, usa Wi-Fi.</li>
+<li><b>Microondas</b>: 2,4 GHz, hasta 11 Mbps; satélites; Bluetooth (1 Mbps, 10 m, 100 m con repetidores).</li></ul></details>
+
+<details><summary>7. Cable coaxial</summary><ul>
+<li>Partes: <b>núcleo</b> de cobre, <b>dieléctrico</b> (aislante), <b>malla</b> (blindaje/masa), <b>funda</b>. No se puede doblar a 90 grados.</li>
+<li><b>Banda ancha</b>: 75 ohmios, analógico (TV, teléfono), más de 300 MHz.</li>
+<li><b>Banda base</b>: 50 ohmios, redes de ordenadores. Delgado (thin, blanco, 10Base2, 185 m, flexible) y grueso (thick, amarillo, 10Base5, 500 m, 10 Mbps).</li>
+<li>Conector <b>BNC</b>: final de cable, en T, barril (prolongador), <b>terminador</b> (obligatorio en los extremos del bus). Thicknet con Thinnet: transceptor con conector <b>vampiro</b> y puerto AUI.</li>
+<li>Prueba: ping, comprobador de cables, multímetro (50 a 75 ohmios = correcto).</li></ul></details>
+
+<details><summary>8. Par trenzado</summary><ul>
+<li>Dos hilos entrelazados: el trenzado <b>cancela</b> campos electromagnéticos. En LAN: <b>4 pares</b>. Menos vueltas por metro = peor calidad.</li>
+<li><b>UTP</b> sin apantallar: 100 ohmios, barato, flexible, el más usado. <b>STP</b> malla por par + aluminio: 150 ohmios, más caro y rígido. <b>FTP/ScTP</b> pantalla global: 120 ohmios, intermedio. El apantallado se pone a tierra con el hilo de <b>drenaje</b>.</li>
+<li>Categorías (TIA/EIA-568): <b>Cat 3</b> 10 Mbps (10Base-T); <b>Cat 4</b> 16 Mbps; <b>Cat 5</b> 100 Mbps; <b>Cat 5e</b> 1 Gbps.</li>
+<li>Conectores: <b>RJ-45 macho</b> (UTP), <b>RJ-49 macho</b> (FTP/STP, con chapa metálica a tierra), <b>RJ-45 hembra</b> (keystone jack).</li>
+<li>Pines: <b>1-2 transmiten, 3-6 reciben</b>; 4, 5, 7, 8 sin uso. <b>Cable directo</b> = mismo código de colores en ambos extremos; en el cruzado se intercambian 1-2 con 3-6.</li></ul></details>
+
+<details><summary>9. Fibra óptica</summary><ul>
+<li>Pulsos de luz. <b>Inmune a EMI/RFI</b>, alta velocidad y distancia, pero cara.</li>
+<li>Partes: <b>núcleo</b> (índice de refracción alto), <b>revestimiento</b> (índice bajo), material protector (kevlar), cubierta exterior.</li>
+<li>Emisor: <b>LED</b> (multimodo) o <b>láser ILD</b> (más intenso y caro: monomodo e índice graduado). Receptor: <b>fotodiodo</b>.</li>
+<li><b>Multimodo</b>: muchos haces, núcleo ancho, barata, no sirve para grandes distancias. <b>Índice graduado</b>: capas, menos desfase, más distancia. <b>Monomodo</b> (axial): un solo haz, más de 10 Gbps, mayor distancia, mínima atenuación.</li>
+<li>Conectores: <b>FC</b> (rosca, vibraciones), <b>SC</b> (push-pull, el más usado en Europa), <b>ST/BFOC</b> (bayoneta), SFF: <b>LC</b> y <b>MT-RJ</b>.</li></ul></details>
+
+<details><summary>10. Dispositivos de capa física</summary><ul>
+<li><b>Tarjeta de red (NIC)</b>: recibe voltios, los pasa por el conversor <b>ADC</b> para obtener bits, luego van a un buffer, al bus PCI y a la CPU. Para enviar usa el <b>DAC</b>. También comprueba si el medio está libre y si es el destinatario.</li>
+<li><b>Hub</b> (repetidor multipuerto): regenera, amplifica y reenvía la señal por <b>todos</b> los puertos, y por eso hay más colisiones. Centro de la topología en estrella (si cae, cae toda la red). Sustituido por <b>switches</b>, que sí distinguen puertos.</li></ul></details>
+
+<button class="btn" onclick="tab(1)">Ir al test</button>
+</section>
+
+<section id="p1" class="hide"></section>
+
+<section id="p2" class="hide">
+<div class="card"><h2>Trucos para recordar</h2>
+<div class="mn"><b>Pines:</b> “1-2 Transmiten, 3-6 Reciben”. Los pares libres son 4, 5, 7, 8.</div>
+<div class="mn"><b>Impedancias:</b> UTP 100, FTP 120, STP 150 (de menos a más blindaje, de menos a más ohmios). Coaxial: 50 = datos, 75 = TV.</div>
+<div class="mn"><b>Coaxial:</b> Thin = 2 (10Base2, 185 m), Thick = 5 (10Base5, 500 m).</div>
+<div class="mn"><b>Categorías:</b> Cat 3 = 10, Cat 4 = 16, Cat 5 = 100, Cat 5e = 1000 Mbps.</div>
+<div class="mn"><b>Duplex:</b> Simplex = una vía, Half = turnos (walkie), Full = a la vez (teléfono).</div>
+<div class="mn"><b>Fibra:</b> LED = multimodo, láser = monomodo. Un solo haz = más lejos.</div>
+<div class="mn"><b>Hub vs switch:</b> el hub “grita a todos”, el switch “habla solo con el destinatario”.</div></div>
+
+<div class="card"><h2>Comparativa de cables</h2><div class="tw"><table>
+<tr><th>Medio</th><th>Señal</th><th>Ventaja</th><th>Pega</th></tr>
+<tr><td>Coaxial</td><td>Eléctrica</td><td>Buen blindaje</td><td>Rígido, obsoleto en LAN</td></tr>
+<tr><td>Par trenzado</td><td>Eléctrica</td><td>Barato, flexible</td><td>Menos blindaje (UTP)</td></tr>
+<tr><td>Fibra</td><td>Luz</td><td>Rápida, lejos, sin EMI</td><td>Cara</td></tr>
+</table></div></div>
+
+<div class="card"><h2>Flashcards</h2>
+<p class="sub">Toca la tarjeta para ver la respuesta.</p>
+<div class="fl" id="fl" onclick="flip()"></div>
+<button class="btn alt" onclick="nextCard()">Siguiente tarjeta</button></div>
+</section>
+</main>
+
+<script>
+const Q=[
+{q:"¿Cuál es la función principal de la capa física?",o:["Transmitir bits por el medio de comunicación","Elegir la mejor ruta entre redes","Cifrar los datos del usuario","Mostrar páginas web"],a:0,
+w:["","Elegir rutas es trabajo de la capa de red (la de los routers), no de la física.","Cifrar no es tarea de la capa física. Ella solo se ocupa de que los bits viajen.","Mostrar páginas es cosa de la capa de aplicación, la más cercana al usuario."],
+e:"La capa física es la capa 1 del modelo OSI. Su único trabajo es llevar bits (unos y ceros) de un equipo a otro por el cable o el aire, y que lleguen sin errores.",
+x:"Piensa en la capa física como la carretera: no le importa qué lleva el camión, solo que llegue al otro lado."},
+{q:"¿Qué diferencia hay entre una señal analógica y una digital?",o:["La analógica es continua y la digital solo usa dos valores (0 y 1)","La analógica solo usa 0 y 1 y la digital es continua","La analógica va por fibra y la digital por cobre","No hay ninguna diferencia"],a:0,
+w:["","Lo has invertido: la analógica es la continua y la digital es la que usa solo 0 y 1.","El tipo de señal no depende del cable. La diferencia está en cómo es la señal: continua o con solo dos valores.","Sí hay diferencia: una es continua y la otra solo tiene dos valores."],
+e:"Las señales analógicas son continuas en el tiempo y pueden tomar cualquier valor. Las digitales solo usan dos valores, 0 y 1, y por eso las usan los dispositivos electrónicos.",
+x:"Analógica es una rampa suave (cualquier altura). Digital es una escalera con solo dos peldaños. Un interruptor de luz es digital y un regulador de intensidad es analógico."},
+{q:"¿Qué tres parámetros definen una señal?",o:["Voltaje, resistencia y potencia","Amplitud, frecuencia y fase","Atenuación, ruido y reflexión","Serie, paralelo y simplex"],a:1,
+w:["Esas son magnitudes físicas de las señales y los medios, no los parámetros que describen la onda.","","Esas son perturbaciones, es decir, problemas que puede sufrir la señal.","Son tipos y modos de transmisión, no parámetros de la señal."],
+e:"Amplitud: lo alta que es la onda (se mide en voltios). Frecuencia: cuántas veces se repite por segundo (se mide en hercios). Fase: dónde empieza la onda respecto al origen.",
+x:"Imagina una ola del mar: su altura es la amplitud, cuántas olas llegan por segundo es la frecuencia, y cuándo llega la primera es la fase."},
+{q:"¿Qué ventaja tiene el código Manchester, que usa Ethernet?",o:["Es el más sencillo de procesar","Es muy resistente al ruido y mantiene la sincronización","Solo funciona en fibra óptica","Aumenta la atenuación"],a:1,
+w:["Al contrario: Manchester es más complejo de procesar. Su ventaja es otra.","","No: se usa en Ethernet, que va por cables de cobre.","La atenuación es un problema, no una ventaja. Este código no la aumenta."],
+e:"Manchester cambia de nivel en cada bit, y esos cambios hacen de reloj: el receptor sabe cuándo llega cada bit (sincronización automática) y detecta mejor los errores. Por eso es el más inmune al ruido.",
+x:"Es como dar palmadas al ritmo de una canción: el ritmo te avisa de cuándo toca el siguiente bit. Recuerda: Manchester es igual a Ethernet."},
+{q:"Un walkie-talkie y un teléfono son, respectivamente, ejemplos de lo siguiente?",o:["Simplex y half-duplex","Full-duplex y simplex","Half-duplex y full-duplex","Full-duplex y full-duplex"],a:2,
+w:["El walkie-talkie permite hablar y escuchar (por turnos), así que no es simplex. Y el teléfono no obliga a turnarse, así que no es half-duplex.","Está invertido y mal: el teléfono nunca es simplex porque permite comunicar en los dos sentidos.","","El walkie-talkie no puede hablar y escuchar a la vez: hay que pulsar un botón y esperar turno."],
+e:"Simplex: un solo sentido. Half-duplex: los dos sentidos, pero por turnos. Full-duplex: los dos sentidos a la vez.",
+x:"Simplex es la radio (solo escuchas). Half-duplex es el walkie (habla uno y dice “cambio”). Full-duplex es una llamada normal, donde os oís a la vez."},
+{q:"¿Qué es la atenuación y cómo se soluciona?",o:["Pérdida de potencia con la distancia; se soluciona con repetidores","Interferencia entre cables; se soluciona apantallando","Eco en la línea; se soluciona ajustando impedancias","Ruido de los electrones; no tiene solución"],a:0,
+w:["","Eso describe la diafonía, no la atenuación.","El eco es la reflexión por desacople de impedancias, otro problema distinto.","Eso es el ruido térmico. La atenuación es otra cosa y sí tiene solución: los repetidores."],
+e:"Atenuación significa que la señal se debilita a medida que avanza por el cable. Si el cable es muy largo, llega tan débil que el receptor no la entiende. Los repetidores y concentradores le devuelven fuerza.",
+x:"Es como gritar a alguien que está muy lejos: cuanto más lejos, menos te oye. Un repetidor es una persona en medio que repite tu grito."},
+{q:"¿Qué es la diafonía (crosstalk)?",o:["La pérdida de potencia por la distancia","El eco por desacople de impedancias","El ruido térmico de los electrones","La interferencia que un cable provoca en otro cercano"],a:3,
+w:["Eso es la atenuación.","Eso es la reflexión.","El ruido térmico nace del propio movimiento de los electrones dentro del cable, no de otro cable.",""],
+e:"La diafonía (crosstalk) ocurre cuando la señal de un cable se cuela en otro que va muy pegado. Pasa sobre todo en cables sin trenzar.",
+x:"Es como oír la conversación de la habitación de al lado a través de una pared fina. Diafonía significa cables vecinos que se molestan."},
+{q:"¿Cuál es el orden de las capas de un cable coaxial, de dentro hacia fuera?",o:["Núcleo, malla, dieléctrico, funda","Funda, malla, dieléctrico, núcleo","Núcleo, dieléctrico, malla, funda","Dieléctrico, núcleo, funda, malla"],a:2,
+w:["La malla va por fuera del aislante, no pegada al núcleo. Entre el núcleo y la malla está el dieléctrico.","Está en orden inverso (de fuera hacia dentro). La pregunta pide de dentro hacia fuera.","","El núcleo es siempre lo más interno y la funda lo más externo."],
+e:"De dentro hacia fuera: núcleo de cobre (por donde van los datos), dieléctrico (plástico aislante), malla (protege del ruido) y funda de plástico.",
+x:"Truco con las iniciales: Núcleo, Dieléctrico, Malla, Funda. Piensa en una cebolla: el dato va en el centro y se va tapando con capas."},
+{q:"¿Qué cable coaxial llega más lejos sin perder señal?",o:["El delgado (10Base2), 185 m","El grueso (10Base5), 500 m","Los dos llegan igual","Ninguno pasa de 100 m"],a:1,
+w:["El delgado llega a 185 m. El grueso llega más lejos.","","No: el grueso (500 m) llega mucho más que el delgado (185 m).","Los dos superan los 100 m: uno llega a 185 m y el otro a 500 m."],
+e:"Coaxial grueso (thick, amarillo, 10Base5): hasta 500 m. Coaxial delgado (thin, blanco, 10Base2): hasta 185 m, pero es más flexible y se instala mejor en curvas.",
+x:"Más grueso significa más lejos. Más fino significa más flexible."},
+{q:"¿Por qué se trenzan los hilos en el cable de par trenzado?",o:["Para que sea más rígido","Para que cueste más","Para cancelar las interferencias electromagnéticas","Para que la señal sea analógica"],a:2,
+w:["El trenzado no busca rigidez. De hecho, el par trenzado es un cable flexible.","No: lo importante es su función, y el par trenzado es de los cables más baratos.","","El trenzado no cambia el tipo de señal. Sirve para evitar interferencias."],
+e:"Al enrollar los dos hilos, el campo electromagnético de cada vuelta es contrario al de la vuelta anterior y se cancelan entre sí. Así entra menos ruido en el cable.",
+x:"Es como dos personas empujando en direcciones opuestas: las fuerzas se anulan. Trenzado significa anti-interferencias."},
+{q:"¿Qué cable de par trenzado es el más barato, flexible y usado en las redes?",o:["STP","UTP","FTP","Coaxial"],a:1,
+w:["El STP lleva mallas y aluminio: protege más, pero es más caro y más rígido.","","El FTP lleva una pantalla global de aluminio, así que es más caro que el UTP.","El coaxial no es de par trenzado y hoy casi no se usa en redes locales."],
+e:"UTP significa Unshielded Twisted Pair, es decir, par trenzado sin apantallar. Al no llevar protección extra es barato, flexible y fácil de instalar. Su impedancia es de 100 ohmios.",
+x:"La U de UTP es de Unshielded: sin blindaje. Sin blindaje es más barato. El orden de protección de menos a más es UTP, FTP, STP."},
+{q:"En un conector RJ-45, ¿qué pines se usan para enviar y recibir datos?",o:["Los pines 1 y 2 envían y los 3 y 6 reciben","Los pines 1 y 2 reciben y los 3 y 6 envían","Los pines 4 y 5 envían y los 7 y 8 reciben","Los ocho pines hacen lo mismo"],a:0,
+w:["","Es justo al revés: los pines 1 y 2 transmiten y los 3 y 6 reciben.","Los pines 4, 5, 7 y 8 no se usan en este caso: están sin conexión.","No: solo se usan 4 de los 8 pines y cada uno tiene su función."],
+e:"Pines 1 y 2: transmitir datos. Pines 3 y 6: recibir datos. Pines 4, 5, 7 y 8: sin conexión.",
+x:"Truco: 1 y 2 Transmiten, 3 y 6 Reciben. En el cable cruzado se cambian de sitio para que lo que transmite uno lo reciba el otro."},
+{q:"¿Qué categoría de par trenzado llega hasta 1 Gbps?",o:["Categoría 3","Categoría 4","Categoría 5","Categoría 5e"],a:3,
+w:["La categoría 3 solo llega a 10 Mbps.","La categoría 4 llega a 16 Mbps.","La categoría 5 llega a 100 Mbps. Para 1 Gbps hace falta la 5e.",""],
+e:"Categoría 3: 10 Mbps. Categoría 4: 16 Mbps. Categoría 5: 100 Mbps. Categoría 5e: 1 Gbps (1000 Mbps). La e viene de enhanced, que significa mejorada.",
+x:"Aprende los números en orden: 3 es 10, 4 es 16, 5 es 100 y 5e es 1000. La e mejora a la 5."},
+{q:"¿Qué fibra óptica llega más lejos y más rápido?",o:["La monomodo, que envía un único haz de luz","La multimodo, con muchos haces","Todas llegan igual","La que usa LED"],a:0,
+w:["","En la multimodo los muchos haces se desfasan y pierden energía al rebotar, así que no llega tan lejos.","No: el tipo de fibra cambia mucho la distancia que alcanza.","El LED se usa con la multimodo, que llega menos lejos. La monomodo usa láser."],
+e:"En la monomodo hay un solo haz de luz sin rebotes, así que casi no pierde señal. Llega muy lejos y supera los 10 Gbps.",
+x:"Mono significa uno: un solo haz que va recto como una flecha. Multi significa muchos: haces rebotando por el tubo como una bola de pinball."},
+{q:"¿Qué hace un hub cuando recibe una señal por un puerto?",o:["La envía solo al equipo destinatario","La reenvía por todos los demás puertos","La descarta","La cifra antes de enviarla"],a:1,
+w:["Eso lo hace un switch, no un hub. El hub no sabe quién es el destinatario.","","Un hub no descarta nada: regenera la señal y la reenvía.","Cifrar no es función de un hub. Solo repite la señal."],
+e:"El hub es un repetidor con varios puertos: regenera la señal y la manda por todos los demás puertos. Al enviar a todos aumentan las colisiones, y por eso hoy se usan switches.",
+x:"El hub grita a toda la sala. El switch habla solo con la persona destinataria."}
+];
+const F=[["¿Función de la capa física?","Transmitir bits por el canal"],["Pines que transmiten / reciben en RJ-45","1-2 transmiten, 3-6 reciben"],["UTP / FTP / STP (impedancia)","100 / 120 / 150 ohmios"],["Coaxial banda base vs ancha","50 ohmios datos, 75 ohmios TV"],["Alcance thin / thick","185 m / 500 m"],["Cat 3 / 4 / 5 / 5e","10 / 16 / 100 / 1000 Mbps"],["Simplex, half, full","Una vía, turnos, a la vez"],["Qué usa Ethernet","Código Manchester"],["Atenuación","Pérdida de potencia con la distancia"],["Diafonía","Interferencia entre cables cercanos"],["Para qué sirve el terminador BNC","Cerrar el bus y evitar interferencias por señal perdida"],["Fibra monomodo","1 haz, >10 Gbps, mucha distancia"],["Hub vs switch","Hub envía a todos, switch solo al destino"],["Cable directo","Mismo código de colores en ambos extremos"]];
+let cur=0,sc=0,fails=[],done=false,order=[];
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function tab(n){for(let i=0;i<3;i++){document.getElementById('p'+i).classList.toggle('hide',i!=n);document.getElementById('t'+i).classList.toggle('on',i==n)}
+if(n==1&&!document.getElementById('p1').innerHTML)start();window.scrollTo(0,0)}
+function start(){cur=0;sc=0;fails=[];order=sh(Q.map((_,i)=>i));render()}
+function render(){const p=document.getElementById('p1');
+if(cur>=Q.length){let h='<div class="card"><div class="big">'+sc+' / '+Q.length+'</div><p style="text-align:center">'+(sc>=13?'¡Excelente! ':sc>=9?'Bien, repasa los fallos ':'Repasa el resumen y vuelve a intentarlo ')+'</p></div>';
+if(fails.length){h+='<h2>Lo que has fallado</h2>';fails.forEach(f=>{h+='<div class="card"><b>'+f.q+'</b><div class="fb ok" style="margin-top:8px">Correcta: '+f.c+'</div><div class="fb ko">Tu respuesta: '+f.y+'. '+f.w+'</div><p style="font-size:.9rem">'+f.e+'</p><div class="mn"><b>Para entenderlo fácil:</b> '+f.x+'</div></div>'})}
+h+='<button class="btn" onclick="start()">Repetir test (orden nuevo)</button><button class="btn alt" onclick="tab(0)">Volver al resumen</button>';p.innerHTML=h;return}
+const q=Q[order[cur]];done=false;q.s=sh(q.o.map((t,i)=>i));
+p.innerHTML='<div class="sub">Pregunta '+(cur+1)+' de '+Q.length+', Aciertos: '+sc+'</div><div class="bar"><i style="width:'+(cur/Q.length*100)+'%"></i></div><div class="card"><h2>'+q.q+'</h2>'+q.s.map((oi,k)=>'<button class="opt" onclick="ans('+k+')">'+q.o[oi]+'</button>').join('')+'<div id="fb"></div></div>'}
+function fbh(ok,q,w){const t='<div class="mn"><b>Para entenderlo fácil:</b> '+q.x+'</div>';return ok?'<div class="fb ok"><b>¡Correcto!</b> '+q.e+'</div>'+t:'<div class="fb ko"><b>Incorrecto.</b> '+w+'</div><div class="fb ok"><b>La respuesta correcta es:</b> '+q.o[q.a]+'. '+q.e+'</div>'+t}
+function ans(k){if(done)return;done=true;const q=Q[order[cur]],bs=document.querySelectorAll('.opt');const ok=q.s[k]==q.a;
+bs.forEach((b,i)=>{if(q.s[i]==q.a)b.classList.add('ok')});
+if(ok)sc++;else{bs[k].classList.add('ko');fails.push({q:q.q,c:q.o[q.a],y:q.o[q.s[k]],w:q.w[q.s[k]],e:q.e,x:q.x})}
+document.getElementById('fb').innerHTML=fbh(ok,q,q.w[q.s[k]])+'<button class="btn" onclick="cur++;render();window.scrollTo(0,0)">'+(cur==Q.length-1?'Ver resultado':'Siguiente')+'</button>'}
+let fi=0,fs=false;
+function showCard(){document.getElementById('fl').innerHTML=fs?'<b>'+F[fi][1]+'</b>':F[fi][0]}
+function flip(){fs=!fs;showCard()}
+function nextCard(){fi=(fi+1)%F.length;fs=false;showCard()}
+showCard();
+</script>
+</body>
+</html>
